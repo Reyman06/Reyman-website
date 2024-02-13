@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine's Day Card</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #81D8D0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .card {
+    width: 300px;
+    height: 400px;
+    background-color: #ffcccc;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    animation: background-color 4s infinite;
+  }
+  @keyframes background-color {
+    0%   {background-color: #E41B17;}
+    25%  {background-color: #E75480;}
+    50%  {background-color: #9E7BFF;}
+    100% {background-color: #7FFFD4;}
+  }
+
+  .heart1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: red;
+    font-size: 24px;
+    animation: heartbeat 1s infinite;
+  }
+  .heart2 {
+    position: absolute;
+    top: 10px;
+    left: 45px;
+    color: red;
+    font-size: 24px;
+    animation: heartbeat 1s infinite;
+  }
+ .heart3 {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    color: red;
+    font-size: 24px;
+    animation: heartbeat 1s infinite;
+  }
+
+  @keyframes heartbeat {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(2);
+    }
+    100% {
+      transform: scale(0.8);
+    }
+  }
+
+  .petal { 
+      width: 25px; 
+      height: 60px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: red;
+      transform-origin: 50% 100%; 
+      border: 2px solid #ff69b4; 
+      bottom: 75px;
+      left: 18%;
+      }
+  
+  .petal:nth-child(1) { 
+      transform: rotate(0deg);
+      }
+  .petal:nth-child(2) { 
+      transform: rotate(60deg); 
+      } 
+  .petal:nth-child(3) { 
+      transform: rotate(120deg); 
+      }
+  .petal:nth-child(4) { 
+      transform: rotate(180deg); 
+      } 
+  .petal:nth-child(5) {
+      transform: rotate(240deg);
+      } 
+  .petal:nth-child(6) {
+      transform: rotate(300deg);
+      } 
+  h1 {
+    color: red;
+    margin-top: 50px;
+    animation: color 4s infinite;
+  }
+  @keyframes color {
+  0%   {color: #040720;}
+  25%  {color: #66CDAA;}
+  50%  {color: #E41B27;}
+  100% {color: #E75480;}
+}
+  p {
+    margin-top: 20px;
+  }
+
+  .signature {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  form {
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #20B2AA;
+  }
+
+  input {
+    padding: 10px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color:#DADBDD;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+  }
+
+  button:hover {
+    background-color: darkred;
+  }
+
+  #valentine-card {
+    display: none;
+  }
+
+  .flower-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+    bottom: 62px;
+    left: 19%;
+  }
+</style>
+</head>
+<body>
+
+<div class="card" id="valentine-card">
+  <span class="heart1">&hearts;</span>
+  <span class="heart2">&hearts;</span>
+  <span class="heart3">&hearts;</span>
+  
+<div class="flower">
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+</div>
+
+  <h1>Happy Valentine's Day!</h1>
+  <p>Dear Elysha Grace Padilla,</p>
+  <p>I love you more than words can express. With all my heart,</p>
+  <p>Let's celebrate safely and cherish the moments together. Stay safe always!</p>
+  <p class="signature">Reyman</p>
+
+  <div class="flower-dot"></div>
+</div>
+
+<form id="login-form">
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button type="submit">Login</button>
+</form>
+
+<script>
+document.getElementById("login-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  if (username === "Elysha" && password === "Grace") {
+    document.getElementById("valentine-card").style.display = "block";
+    document.getElementById("login-form").style.display = "none";
+  } else {
+    alert("Invalid username or password");
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
